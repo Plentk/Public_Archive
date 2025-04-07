@@ -17,7 +17,8 @@ def listlen(numb):
                 templist.append(1)
         lits.append(templist)
     return lits
-    return
+
+
 print("Welcome to the making fun of number simulator!")
 while True:
     inp = str(input("Input Number to make fun off:\n"))
