@@ -1,0 +1,19 @@
+DECLARE Number: INTEGER
+DECLARE Power: INTEGER
+DECLARE i: INTEGER
+DECLARE j: INTEGER
+DECLARE IndexCard: ARRAY[1:INT(ln(Number) / ln(2))] OF ARRAY [1:INT(Number / 2)]
+
+Number <- 64
+IndexCard <- []
+Power <- 1
+
+WHILE INTEGER(Number / (2 ^ Power)) >= 1
+    
+
+32-63
+16-31, 48-63
+8-15, 24-31, 40-47, 56-63
+4-7, 12-15, 20-23, 28-31, 36-39, 44-47, 52-55, 60-63
+2-3, 6-7, 10-11, 14-15, 18-19, 22-23, 26-27, 30-31, 34-35, 38-39, 42-43, 46-47, 50-51, 54-55, 58-59, 62-63
+1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63
