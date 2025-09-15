@@ -4,7 +4,7 @@ def nest(nomb):
 def listlen(numb):
     temp = 0
     lits = []
-    templist = []
+
     for i in range(1, numb+1):
         templist = []
         temp = numb
