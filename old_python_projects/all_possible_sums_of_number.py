@@ -1,21 +1,29 @@
+config = {0: [[]], 1: [[1]], 2: [[1,1], [2]]}
+
 def nest(nomb):
+    if nomb in config.keys():
+        return config[nomb]
     return nomb
 
 def listlen(numb):
+    if numb <= 0:
+        return []
+    if numb == 1:
+        return [1]
     temp = 0
     lits = []
 
-    for i in range(1, numb+1):
-        templist = []
-        temp = numb
-        temp = temp + 1 - i
-        for k in range(1, temp+1):
-            if k == temp and temp != 1:
-                if k == temp:
-                    templist.append(numb - k + 1)
-            else:
-                templist.append(1)
-        lits.append(templist)
+    for i in range(2, numb+1):
+        print(numb, i)
+        templist = [i]
+        temp = numb - i
+        config_list = nest(temp)
+        print(numb, i, config_list)
+        for j in config_list:
+            j.append(i - temp)
+            j.sort()
+        print(numb, i, j, config_list)
+        lits.extend(config_list)
     return lits
 
 
@@ -40,6 +48,7 @@ output = []
 if check.lower() == "true":
     for j in range(1, inp+1):
         output.append(listlen(j))
+        print(j, output[-1])
 elif check.lower() == "false":
     output = listlen(inp)
 print(output)
